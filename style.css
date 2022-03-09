@@ -1,0 +1,1001 @@
+#instant-crush {
+	margin-left: 50px;
+	border: 1px solid #444444;
+	margin-bottom: 5px;
+}
+
+* {
+	user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+}
+
+@font-face {
+    font-family: 'kabana_boldregular';
+    src: url('font/kabana_bold-webfont.eot');
+    src: url('font/kabana_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/kabana_bold-webfont.woff') format('woff'),
+         url('font/kabana_bold-webfont.ttf') format('truetype'),
+         url('font/kabana_bold-webfont.svg#kabana_boldregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html { height: 100% } 
+body {
+	height: 100%;
+	margin: 0px;
+	background: #000;
+	overflow: hidden;
+}
+
+#page { position: relative; width: 100%; height: 100%; overflow-x: hidden; overflow-y: hidden; }
+
+#audioDiv { position: absolute; width: 100%; height: 100%; z-index:10; background-color: #000000}
+#audioDiv .playButton { position: absolute; width: 200px; height: 200px; top: 50%; left: 50%; margin-left:-100px; margin-top:-100px; }
+#audioDiv .playButton img {width: 100%; height: auto }
+
+#watchMore {
+	position: absolute;
+	right: 30px;
+	top: 10px;
+	width: 150px;
+	height: auto;
+	display: none;
+	z-index: 21;
+}
+
+#watchMore img { width: 100%; height: auto; cursor: pointer;}
+
+.videoDiv { position: absolute; top: 0px; width: auto; height: auto; z-index:2; overflow-x: hidden; overflow-y: hidden;  background-color: #000000; }
+.video { position: absolute; width: auto; height: auto; top: 0px; left: 0px; z-index:1}
+.videoThumb { position: absolute; width: auto; height: auto; top: 0px; left: 0px; z-index:2; cursor: pointer}
+.videoThumb img {width: 100%; height: 100% }
+.videoTitle {  font-family: kabana_boldregular; position: absolute; top: 20px; width: 100%; color: #ffffff; font-size: 25px; text-align: center; z-index: 4}
+
+#videoListing { padding: 10px 10px 10px 10px; position: absolute; top: 0px; right: -340px; z-index: 20; width: 310px; height: 100%; overflow-x: hidden; background-color: #000000; background-color: rgba(0, 0, 0, 0.7);}
+#videoListing .thumbContent { padding: 0px 10px 0px 0px }
+.closePane { position: relative; width: 100%; height: 30px; text-align: right; cursor: pointer; margin-bottom: 10px;}
+.closePane img { width: auto; height: 100%;}
+.thumbVideo { position: relative; width: 100%; height: auto; min-height: 150px; padding: 0px 0px 20px 0px; cursor: pointer}
+.thumbVideo .thumbImage { position: relative; width: 100%; height: auto; margin: 0px 0px 10px 0px; overflow: hidden; border: 1px solid #414141}
+.thumbVideo .thumbImage img {width: 100%; height: auto} 
+.thumbVideo .thumbImage .thumbTitle { padding: 5px; position: absolute; z-index: 2; width: 100%; bottom: 1px; left: 0px; height: auto; font-family: kabana_boldregular; font-size: 14px; color: #ffffff; background-color: #000000; background-color: rgba(0, 0, 0, 0.7); }
+
+/* ----------  Intro   ---------- */
+#intro {
+
+	position: absolute;
+	width: auto;
+	height: 550px;
+	top: 50%;
+	margin-top: -255px;
+	z-index: 1;
+}
+
+#intro .container { position: relative; width: 100%; height: 100%; }
+#intro .logo {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 500px;
+	width: 658px;
+	margin-left: -329px;
+	margin-top: -250px;
+	display: none;
+	z-index: 1;
+}
+
+#intro .logo img { width: auto; height: 100%; }
+
+#intro .getlucky {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 550px;
+	width: 715px;
+	margin-left: -357px;
+	margin-top: -275px;
+	display: none;
+	z-index: 1;
+}
+
+#intro .getlucky img { width: 100%; height: auto; border: none; outline: none; outline-style: none; }
+#intro .getlucky a { border: none; outline: none; outline-style: none; }
+
+#intro .logo.show {
+	transform: rotateX(0deg);
+	-ms-transform: rotateX(0deg);
+	-moz-transform: rotateX(0deg);
+	-o-transform: rotateX(0deg);
+	-webkit-transform: rotateX(0deg);
+}
+#intro .thomas,
+#intro .guy {
+	position: absolute;
+
+	height: 550px;
+	width: 393px;
+	display: block;
+	display: none;
+	-webkit-perspective: 1000;
+	-webkit-backface-visibility: hidden;
+}
+
+#intro .thomas img,
+#intro .guy img{
+	width: auto;
+	height: 100%;
+}
+
+#intro .thomas {
+	left: 50%;
+	margin-left: -393px;
+	z-index: 4;
+}
+#intro .guy {
+	right: 50%;
+	margin-right: -392px;
+	z-index: 5;
+	
+}
+
+#intro .shadowl,
+#intro .shadowr {
+	position: absolute;
+	height: 550px;
+	width: 100px;
+	display: block;
+	-webkit-perspective: 1000;
+	-webkit-backface-visibility: hidden
+}
+
+#intro .shadowl img,
+#intro .shadowr img {
+	width: 100%;
+	height: 100%;
+}
+
+#intro .shadowl {
+	left: 50%;
+	z-index: 2;
+}
+#intro .shadowr {
+	right: 50%;
+	z-index: 3;
+	
+}
+
+/* ---------- Content  ---------- */
+
+#contentTop {
+	
+	position: absolute;
+	width: 966px;
+	height: 150px;
+	z-index: 5;
+	display: none;
+	top: 0px;
+	left: 50%;
+	margin-left: -483px;
+}
+
+#contentTrigger{
+	
+	position: absolute;
+	width: 966px;
+	height: 966px;
+	z-index: 4;
+	display: none;
+	top: 0px;
+	left: 50%;
+	margin-left: -483px;
+	background-color: transparent;
+	background-image: url(images/spacer.gif);
+}
+
+#contentBot {
+	
+	position: absolute;
+	width: 966px;
+	height: 70px;
+	bottom: 0px;
+	z-index: 5;
+	display: none;
+	left: 50%;
+	margin-left: -483px;
+
+}
+#contentTop .ram {
+	position: absolute;
+	top: 10px;
+	left: 30px;
+	width: 143px;
+	height: 110px;
+	display: block;
+
+}
+
+#contentTop .announce {
+	position: absolute;
+	top: 10px;
+	right: 30px;
+	height: 114px;
+	width: 263px;
+	display: block;
+}
+
+#contentTop .ram img, #contentTop .announce img, #contentBot .footer img { width: 100%; height: auto }
+
+#contentBot .footer {
+	position: absolute;
+	bottom: 15px;
+	right: 30px;
+	height: 30px;
+	width: 221px;
+	display: block;
+}
+
+.controls{
+	position: absolute;
+	width: 50px;
+	height: 100px;
+	top: 50%;
+	margin-top: -50px;
+	z-index: 6;
+	display: none;
+	cursor: pointer;
+}
+
+.controls img { width: 100%; height: auto }
+.left { left: 0px; } 
+.right { right: 0px; }
+
+/* ---------- Menu IE 8---------- */
+
+#menuIE {
+	display: block;
+	position: absolute;
+	left: 95px;
+	bottom: 20px;
+	z-index: 10;
+	height: 20px;
+	width: 290px;
+}
+.logo-small {
+	position: absolute;
+	bottom: 5px;
+	left: 20px;
+	height: 50px;
+	width: 69px;
+	display: block;
+}
+
+.logo-small img { width: 100%; height: auto; }
+
+#menuIE .link {
+	position: relative;
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	display: inline-block;
+	text-align: center;
+	margin-right: 10px;
+}
+
+#menuIE .link img { width: auto; height: 100%; border: 0px;}
+
+#menuIE .link.twitter {
+	top: 0px; left: 0px;
+}
+#menuIE .link.facebook {
+	top: 0px; left: 0px;
+}
+#menuIE .link.youtube {
+	top: 0px; left: 0px;
+}
+#menuIE .link.official-site {
+	top: 0px; left: 0px;
+}
+
+#menuIE .link.amazon {
+	top: 0px; left: 0px;
+}
+
+#menuIE .link.itunes {
+	top: 0px; left: 0px;
+
+}
+
+#menuIE .link.fnac {
+	top: 0px; left: 0px;
+}
+
+#menuIE .link.weewah {
+	top: 0px; left: 0px;
+}
+
+.wider { width : 55px !important;  margin-left: 0px }
+
+.video iframe { border: 0px; }
+
+/*---- responsive ----*/
+
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+
+	#page { overflow-x: hidden; overflow-y: hidden }
+	
+	#contentBot, #contentTop {
+
+		width: 768px;
+		margin-left: -384px;
+
+	}
+}
+
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape){
+
+	#page { overflow-x: hidden; overflow-y: hidden }
+	
+	#contentBot, #contentTop {
+
+		width: 996px;
+		margin-left: -483px;
+
+	}
+
+
+	#intro {
+
+		position: absolute;
+		width: 100%;
+		height: 400px;
+		margin-top: -200px;
+		top: 50%;
+		z-index: 1;
+		display: none;
+	}
+
+
+	#intro .getlucky {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		height: 400px;
+		width: 400px;
+		margin-left: -200px;
+		margin-top: -200px;
+		display: none;
+		z-index: 1;
+	}
+
+	#intro .getlucky img { width: 100%; height: auto; }
+
+	#intro .thomas,
+	#intro .guy {
+		position: absolute;
+
+		height: 400px;
+		width: 204px;
+		display: none;
+	}
+	
+	#intro .thomas {
+		left: 50%;
+		margin-left: -204px;
+	}
+	#intro .guy {
+		right: 50%;
+		margin-right: -204px;
+
+	}
+	
+	#intro .shadowl,
+	#intro .shadowr {
+		position: absolute;
+		height: 400px;
+		width: 80px;
+		display: block;
+	}
+}
+
+@media all and (max-height: 768px){
+
+	#page { overflow-x: hidden; overflow-y: hidden }
+
+	#intro {
+
+		position: absolute;
+		width: 100%;
+		height: 400px;
+		margin-top: -200px;
+		top: 50%;
+		z-index: 1;
+		display: none;
+	}
+
+
+	#intro .getlucky {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		height: 400px;
+		width: 520px;
+		margin-left: -260px;
+		margin-top: -200px;
+		display: none;
+		z-index: 1;
+	}
+
+	#intro .getlucky img { width: 100%; height: auto; }
+
+	#intro .logo.show {
+		transform: rotateX(0deg);
+		-ms-transform: rotateX(0deg);
+		-moz-transform: rotateX(0deg);
+		-o-transform: rotateX(0deg);
+		-webkit-transform: rotateX(0deg);
+	}
+	#intro .thomas,
+	#intro .guy {
+		position: absolute;
+
+		height: 400px;
+		width: 286px;
+		display: block;
+		display: none;
+		-webkit-perspective: 1000;
+		-webkit-backface-visibility: hidden;
+	}
+
+	#intro .thomas img,
+	#intro .guy img{
+		width: auto;
+		height: 100%;
+	}
+
+	#intro .thomas {
+		left: 50%;
+		margin-left: -286px;
+		z-index: 4;
+	}
+	#intro .guy {
+		right: 50%;
+		margin-right: -286px;
+		z-index: 5;
+
+	}
+
+	#intro .shadowl,
+	#intro .shadowr {
+		position: absolute;
+		height: 400px;
+		width: 80px;
+		display: block;
+		-webkit-perspective: 1000;
+		-webkit-backface-visibility: hidden
+	}	
+}
+
+@media screen and (max-width: 400px) {
+	#page { position: relative; width: 100%; height: 100%; overflow-x: hidden; overflow-y: hidden; }
+	#videoListing .thumbContent { padding: 0px 0px 0px 0px }
+
+	.videoTitle {  font-size: 13px;}
+
+	#intro {
+
+		position: absolute;
+		width: 100%;
+		height: 200px;
+		margin-top: -100px;
+		top: 50%;
+		z-index: 1;
+		display: none;
+	}
+
+	#intro .logo {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		height: 180px;
+		width: 237px;
+		margin-left: -116px;
+		margin-top: -90px;
+		display: none;
+
+	}
+
+	#intro .logo img { width: auto; height: 100%; }	
+
+
+	#intro .getlucky {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		height: 200px;
+		width: 260px;
+		margin-left: -130px;
+		margin-top: -100px;
+		display: none;
+		z-index: 1;
+	}
+
+	#intro .getlucky img { width: 100%; height: auto; }
+
+	#intro .thomas,
+	#intro .guy {
+		position: absolute;
+
+		height: 200px;
+		width: 143px;
+		display: none;
+	}
+	
+	#intro .thomas {
+		left: 50%;
+		margin-left: -143px;
+	}
+	#intro .guy {
+		right: 50%;
+		margin-right: -143px;
+
+	}
+	
+	#intro .shadowl,
+	#intro .shadowr {
+		position: absolute;
+		height: 200px;
+		width: 40px;
+		display: block;
+	}
+	
+	#contentTop {
+
+		position: absolute;
+		width: 300px;
+		height: 85px;
+		z-index: 5;
+		display: none;
+		top: 0px;
+		left: 0px;
+		margin-left: 0px;
+	}
+	
+	#contentTop .ram {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		width: 64px;
+		height: 49px;
+		display: block;
+
+	}
+	
+	#contentTop .announce {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		width: 120px;
+		height: 85px;
+		display: block;
+	}
+
+	#contentTop .ram img, #content .announce img, #contentBot .footer img { width: auto; height: 100% }
+	#contentBot { position: absolute; bottom: 0px; left: 0px; margin-left: 0px; height: 55px;}
+	#contentBot .footer { position: absolute; right: 6px; bottom: 3px; height: 20px; text-align: right}
+
+	.logo-small {
+		position: absolute;
+		bottom: 0px;
+		left: 5px;
+		height: 30px;
+		width: 41px;
+		display: block;
+	}
+
+	#menuIE {
+		display: block !important;
+		position: absolute !important;
+		height: 20px;
+		width: 210px;
+		left: 50%;
+		margin-left: -105px;
+		bottom: 45px;
+	}
+	
+	#menuIE .link {
+		position: relative;
+		display: block;
+		height: 20px;
+		width: 20px;
+		display: inline-block;
+		margin: 0px 2px;
+	}
+	#menuIE .link img { width: auto; height: 100%; border: 0px;}
+	
+	#menuIE .link.twitter {
+		top: 0px; left: 0px;
+	}
+	#menuIE .link.facebook {
+		top: 0px; left: 0px;
+	}
+	#menuIE .link.youtube {
+		top: 0px; left: 0px;
+	}
+	#menuIE .link.official-site {
+		top: 0px; left: 0px;
+	}
+
+	#menuIE .link.amazon {
+		top: 0px; left: 0px;
+	}
+	
+	#menuIE .link.itunes {
+		top: 0px; left: 0px;
+
+	}
+
+	#menuIE .link.weewah {
+		top: 0px; left: 0px;
+	}	
+	.wider { margin-left: 0px; width: 55px !important}
+	
+	.controls{
+		position: absolute;
+		width: 40px;
+		height: 80px;
+		top: 50%;
+		margin-top: -40px;
+		z-index: 6;
+		display: none;
+		cursor: pointer;
+	}
+	
+}
+
+
+@media screen and (max-width: 480px) and (max-height: 245px){
+
+	#page { position: relative; width: 100%; height: 100%; overflow-x: hidden; overflow-y: hidden; }
+	
+	#intro {
+	
+		position: absolute;
+		width: 100%;
+		height: 150px;
+		margin-top: -75px;
+		top: 50%;
+		z-index: 1;
+		display: none;
+	}
+
+	#intro .logo {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		height: 130px;
+		width: 171px;
+		margin-left: -85px;
+		margin-top: -65px;
+		display: none;
+
+	}
+
+	#intro .getlucky {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		height: 150px;
+		width: 195px;
+		margin-left: -97px;
+		margin-top: -75px;
+		display: none;
+		z-index: 1;
+	}
+
+	#intro .getlucky img { width: 100%; height: auto; }
+	
+	#intro .logo img { width: auto; height: 100%; }	
+	#intro .thomas,
+	#intro .guy {
+		position: absolute;
+
+		height: 150px;
+		width: 107px;
+		display: none;
+	}
+
+	#intro .thomas {
+		left: 50%;
+		margin-left: -107px;
+	}
+	#intro .guy {
+		right: 50%;
+		margin-right: -107px;
+
+	}
+
+	#intro .shadowl,
+	#intro .shadowr {
+		position: absolute;
+		height: 150px;
+		width: 30px;
+		display: block;
+	}
+	
+	#contentTop { position: absolute; top: 0px; left: 0px; height: 65px; width: 100%;  margin-left: 0px;}
+	
+	#contentTop .ram {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		width: 55px;
+		height: 42px;
+		display: block;
+
+	}
+	
+	#contentTop .announce {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		width: 100px;
+		height: 64px;
+		display: block;
+	}
+
+	#contentTop .ram img, #content .announce img, #contentBot .footer img { width: auto; height: 100% }
+	
+	#contentBot .footer { position: absolute; right: 6px; bottom: 3px; height: 20px; text-align: right}
+	#contentBot { position: absolute; bottom: 3px; left: 0px; width: auto; margin-left: 0px;}
+
+	.logo-small {
+		position: absolute;
+		bottom: 0px;
+		left: 5px;
+		height: 30px;
+		width: 41px;
+		display: block;
+	}
+	
+	#menuIE {
+		display: block !important;
+		position: absolute !important;
+		height: 20px;
+		width: 290px;
+		left: 55px;
+		bottom: 3px;
+	}
+	#menuIE .logo-small-mobile { display: none; }
+	#menuIE .logo-small { display: none }
+	
+	#menuIE .link {
+		position: relative;
+		display: block;
+		height: 20px;
+		width: 20px;
+		display: inline-block;
+		margin: 0px 2px;
+	}
+	#menuIE .link img { width: auto; height: 100%; border: 0px;}
+	
+	#menuIE .link.twitter {
+		top: 0px; left: 0px;
+	}
+	#menuIE .link.facebook {
+		top: 0px; left: 0px;
+	}
+	#menuIE .link.youtube {
+		top: 0px; left: 0px;
+	}
+	#menuIE .link.official-site {
+		top: 0px; left: 0px;
+	}
+
+	#menuIE .link.amazon {
+		top: 0px; left: 0px;
+	}
+	
+	#menuIE .link.itunes {
+		top: 0px; left: 0px;
+
+	}
+
+	#menuIE .link.weewah {
+		top: 0px; left: 0px;
+	}	
+	
+	#menuIE.exus { 
+		margin-left: -90px;
+	}
+	
+	.wider { margin-left: 0px; width: 55px !important}
+	
+	.controls{
+		position: absolute;
+		width: 40px;
+		height: 80px;
+		top: 50%;
+		margin-top: -40px;
+		z-index: 6;
+		display: none;
+		cursor: pointer;
+	}
+}
+
+@media screen and (max-device-width: 760px) and (orientation: landscape) {
+
+	#page { position: relative; width: 100%; height: 100%; overflow-x: hidden; overflow-y: hidden; }
+	
+	#intro {
+	
+		position: absolute;
+		width: 100%;
+		height: 150px;
+		margin-top: -75px;
+		top: 50%;
+		z-index: 1;
+		display: none;
+	}
+
+	#intro .logo {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		height: 130px;
+		width: 171px;
+		margin-left: -85px;
+		margin-top: -65px;
+		display: none;
+
+	}
+
+	#intro .getlucky {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		height: 150px;
+		width: 195px;
+		margin-left: -97px;
+		margin-top: -75px;
+		display: none;
+		z-index: 1;
+	}
+
+	#intro .getlucky img { width: 100%; height: auto; }
+	
+	#intro .logo img { width: auto; height: 100%; }	
+	#intro .thomas,
+	#intro .guy {
+		position: absolute;
+
+		height: 150px;
+		width: 107px;
+		display: none;
+	}
+
+	#intro .thomas {
+		left: 50%;
+		margin-left: -107px;
+	}
+	#intro .guy {
+		right: 50%;
+		margin-right: -107px;
+
+	}
+
+	#intro .shadowl,
+	#intro .shadowr {
+		position: absolute;
+		height: 150px;
+		width: 30px;
+		display: block;
+	}
+	
+	#contentTop { position: absolute; top: 0px; left: 0px; height: 65px; width: 100%;  margin-left: 0px;}
+	
+	#contentTop .ram {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		width: 55px;
+		height: 42px;
+		display: block;
+
+	}
+	
+	#contentTop .announce {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		width: 100px;
+		height: 64px;
+		display: block;
+	}
+
+	#contentTop .ram img, #content .announce img, #contentBot .footer img { width: auto; height: 100% }
+	
+	#contentBot .footer { position: absolute; right: 6px; bottom: 3px; height: 20px; text-align: right}
+	#contentBot { position: absolute; bottom: 3px; left: 0px; width: auto; margin-left: 0px;}
+
+	.logo-small {
+		position: absolute;
+		bottom: 0px;
+		left: 5px;
+		height: 30px;
+		width: 41px;
+		display: block;
+	}
+	
+	#menuIE {
+		display: block !important;
+		position: absolute !important;
+		height: 20px;
+		width: 290px;
+		left: 55px;
+		bottom: 3px;
+	}
+	#menuIE .logo-small-mobile { display: none; }
+	#menuIE .logo-small { display: none }
+	
+	#menuIE .link {
+		position: relative;
+		display: block;
+		height: 20px;
+		width: 20px;
+		display: inline-block;
+		margin: 0px 2px;
+	}
+	#menuIE .link img { width: auto; height: 100%; border: 0px;}
+	
+	#menuIE .link.twitter {
+		top: 0px; left: 0px;
+	}
+	#menuIE .link.facebook {
+		top: 0px; left: 0px;
+	}
+	#menuIE .link.youtube {
+		top: 0px; left: 0px;
+	}
+	#menuIE .link.official-site {
+		top: 0px; left: 0px;
+	}
+
+	#menuIE .link.amazon {
+		top: 0px; left: 0px;
+	}
+	
+	#menuIE .link.itunes {
+		top: 0px; left: 0px;
+
+	}
+
+	#menuIE .link.weewah {
+		top: 0px; left: 0px;
+	}	
+	
+	#menuIE.exus { 
+		margin-left: -90px;
+	}
+	
+	.wider { margin-left: 0px; width: 55px !important}
+	
+	.controls{
+		position: absolute;
+		width: 40px;
+		height: 80px;
+		top: 50%;
+		margin-top: -40px;
+		z-index: 6;
+		display: none;
+		cursor: pointer;
+	}
+}
